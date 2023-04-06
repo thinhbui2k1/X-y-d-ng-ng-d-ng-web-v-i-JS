@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1" id="form1" method="post"> 
+        <input type="text" name="account" id="account" size="40"> 
+        <input type="button" name="check" value="Check" onclick="checkAccount();"> 
+    </form>
+    <script>
+        function checkAccount() {
+            var username = document.getElementById("account");
+             // Kiểm tra độ dài tài khoản
+            if (username.length < 5 || username.length > 20) {
+                console.log('sai');
+                return false;
+            }
+            
+            // Kiểm tra ký tự đầu tiên của tài khoản
+            if (/^[0-9]/.test(username)) {
+                console.log('sai');
+                return false;
+            }
+            
+            // Kiểm tra các ký tự trong tài khoản
+            if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+                console.log('sai');
+                return false;
+            }
+            
+            return true;
+            
+            
+           
+            
+            
+            
+        }
+    </script>
+</body>
+</html>
